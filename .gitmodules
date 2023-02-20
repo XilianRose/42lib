@@ -1,9 +1,0 @@
-[submodule "gnl"]
-	path = gnl
-	url = git@github.com:XilianRose/get_next_line.git
-[submodule "printf"]
-	path = printf
-	url = git@github.com:XilianRose/printf.git
-[submodule "libft"]
-	path = libft
-	url = git@github.com:XilianRose/libft.git

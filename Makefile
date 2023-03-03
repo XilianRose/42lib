@@ -6,88 +6,94 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/16 12:00:14 by mstegema      #+#    #+#                  #
-#    Updated: 2023/02/20 16:02:54 by mstegema      ########   odam.nl          #
+#    Updated: 2023/03/03 15:17:53 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
+# target
 NAME = libft.a
-SRCS = srcs/ft_isalpha.c \
-	srcs/ft_isdigit.c \
-	srcs/ft_isalnum.c \
-	srcs/ft_isascii.c \
-	srcs/ft_isprint.c \
-	srcs/ft_strlen.c \
-	srcs/ft_memset.c \
-	srcs/ft_bzero.c \
-	srcs/ft_memcpy.c \
-	srcs/ft_memmove.c \
-	srcs/ft_strlcpy.c \
-	srcs/ft_strlcat.c \
-	srcs/ft_toupper.c \
-	srcs/ft_tolower.c \
-	srcs/ft_strchr.c \
-	srcs/ft_strrchr.c \
-	srcs/ft_strncmp.c \
-	srcs/ft_memchr.c \
-	srcs/ft_memcmp.c \
-	srcs/ft_strnstr.c \
-	srcs/ft_atoi.c \
-	srcs/ft_calloc.c \
-	srcs/ft_strdup.c \
-	srcs/ft_substr.c \
-	srcs/ft_strjoin.c \
-	srcs/ft_strtrim.c \
-	srcs/ft_split.c \
-	srcs/ft_itoa.c \
-	srcs/ft_strmapi.c \
-	srcs/ft_striteri.c \
-	srcs/ft_putchar_fd.c \
-	srcs/ft_putstr_fd.c \
-	srcs/ft_putendl_fd.c \
-	srcs/ft_putnbr_fd.c \
-	srcs/ft_lstnew.c \
-	srcs/ft_lstadd_front.c \
-	srcs/ft_lstsize.c \
-	srcs/ft_lstlast.c \
-	srcs/ft_lstadd_back.c \
-	srcs/ft_lstdelone.c \
-	srcs/ft_lstclear.c \
-	srcs/ft_lstiter.c \
-	srcs/ft_lstmap.c \
-	srcs/ft_intlen.c \
-	srcs/get_next_line.c \
-	srcs/get_next_line_utils.c \
-	srcs/get_next_line_bonus.c \
-	srcs/get_next_line_utils_bonus.c \
-	srcs/ft_printf.c \
-	srcs/ft_print_csnx.c
-OBJS = $(SRCS:.c=.o)
+
+# directories
+SRCDIR = src
+INCDIR = inc
+OBJDIR = obj
+BINDIR = bin
+
+SRCS = src/ft_isalpha.c \
+	src/ft_isdigit.c \
+	src/ft_isalnum.c \
+	src/ft_isascii.c \
+	src/ft_isprint.c \
+	src/ft_strlen.c \
+	src/ft_memset.c \
+	src/ft_bzero.c \
+	src/ft_memcpy.c \
+	src/ft_memmove.c \
+	src/ft_strlcpy.c \
+	src/ft_strlcat.c \
+	src/ft_toupper.c \
+	src/ft_tolower.c \
+	src/ft_strchr.c \
+	src/ft_strrchr.c \
+	src/ft_strncmp.c \
+	src/ft_memchr.c \
+	src/ft_memcmp.c \
+	src/ft_strnstr.c \
+	src/ft_atoi.c \
+	src/ft_calloc.c \
+	src/ft_strdup.c \
+	src/ft_substr.c \
+	src/ft_strjoin.c \
+	src/ft_strtrim.c \
+	src/ft_split.c \
+	src/ft_itoa.c \
+	src/ft_strmapi.c \
+	src/ft_striteri.c \
+	src/ft_putchar_fd.c \
+	src/ft_putstr_fd.c \
+	src/ft_putendl_fd.c \
+	src/ft_putnbr_fd.c \
+	src/ft_lstnew.c \
+	src/ft_lstadd_front.c \
+	src/ft_lstsize.c \
+	src/ft_lstlast.c \
+	src/ft_lstadd_back.c \
+	src/ft_lstdelone.c \
+	src/ft_lstclear.c \
+	src/ft_lstiter.c \
+	src/ft_lstmap.c \
+	src/ft_printf.c \
+	src/ft_printf_csnx.c \
+	src/get_next_line_bonus.c \
+	src/get_next_line_utils_bonus.c \
+	src/ft_intlen.c
+OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 CFLAGS = -Wall -Wextra -Werror
-HEADER = libft.h \
-	ft_printf.h \
-	get_next_line.h \
-	get_next_line_bonus.h
+HEADER = $(INCDIR)/libft.h
 PURPLE = \033[0;35m
 NC = \033[0m
 
-all: $(NAME)
+all: $(BINDIR)/$(NAME)
 
-$(NAME): $(OBJS)
-	@ar -rcs $(NAME) $(OBJS)
+$(BINDIR)/$(NAME): $(OBJS)
+	@mkdir -p $(BINDIR)
+	@ar -rcs $(BINDIR)/$(NAME) $(OBJS)
 	@echo "$(PURPLE)$(NAME)$(NC) has been created"
 
-objs/%.o: srcs/%.c $(HEADER)
-	@mkdir -p $(dir $@)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
+	@mkdir -p $(OBJDIR)
 	@cc -c $(CFLAGS) $< -o $@
 	@echo "Compiling: $(PURPLE)$<$(NC)"
 
 clean:
-	@rm -f *.o
+	@rm -f $(OBJDIR)/*.o
 	@echo "$(PURPLE)object files$(NC) have been removed"
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "$(PURPLE)$(NAME)$(NC) has been removed"
+	@rm -f $(BINDIR)/$(NAME)
+	@rmdir $(BINDIR)
+	@rmdir $(OBJDIR)
+	@echo "$(PURPLE)$(NAME) & directories$(NC) have been removed"
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/16 12:00:14 by mstegema      #+#    #+#                  #
-#    Updated: 2023/03/03 15:17:53 by mstegema      ########   odam.nl          #
+#    Updated: 2023/03/22 12:48:42 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,8 @@ SRCS = src/ft_isalpha.c \
 	src/ft_printf_csnx.c \
 	src/get_next_line_bonus.c \
 	src/get_next_line_utils_bonus.c \
-	src/ft_intlen.c
+	src/ft_intlen.c \
+	src/ft_strendstr.c
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 CFLAGS = -Wall -Wextra -Werror
 HEADER = $(INCDIR)/libft.h

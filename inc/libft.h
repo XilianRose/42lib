@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 11:09:09 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/03 15:16:41 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/03/22 12:53:22 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ char	*ft_strchr_gnl(const char *s, int c);
 
 /* added functions */
 int		ft_intlen(int n);
+char	*ft_strendstr(const char *hay, const char *needle);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/22 12:02:16 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/22 12:52:14 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/03/23 12:39:20 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,17 @@ Returns the needle found in haystack and NULL if not found */
 char	*ft_strendstr(const char *hay, const char *needle)
 {
 	size_t	i;
-	size_t	ii;
 	size_t	j;
 
 	i = ft_strlen(hay);
 	j = ft_strlen(needle);
-	while (i > 0)
+	while (hay[i] == needle[j] && i > 0 && j > 0)
 	{
-		ii = i;
-		j = ft_strlen(needle);
-		while (hay[ii] == needle[j] && ii > 0 && j > 0)
-		{
-			j--;
-			ii--;
-		}
-		if (hay[ii] == needle[j])
-			return ((char *)(hay + ii));
+		j--;
 		i--;
 	}
+	if (hay[i] == needle[j])
+		return ((char *)(hay + i));
 	return (NULL);
 }
 
@@ -56,7 +49,7 @@ char	*ft_strendstr(const char *hay, const char *needle)
 // 	char *s3 = ft_strendstr("asdhash.exte", ".ext");
 // 	printf("\n3. ft: %s\n\n", s3);
 
-// 	char *s4 = ft_strendstr("asdhash.exte", ".ext\n");
+// 	char *s4 = ft_strendstr("asdhash.ext", ".ext\0");
 // 	printf("\n4. ft: %s\n\n", s4);
 
 // 	return (0);

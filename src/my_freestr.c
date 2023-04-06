@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_intlen.c                                        :+:    :+:            */
+/*   my_freestr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/20 15:42:07 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/03 15:09:34 by mstegema      ########   odam.nl         */
+/*   Created: 2023/04/05 13:31:39 by mstegema      #+#    #+#                 */
+/*   Updated: 2023/04/06 14:27:34 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-int	ft_intlen(int n)
-{
-	size_t	i;
+/* frees the string and sets it to NULL */
 
-	i = 0;
-	if ((n == 0) || (n < 0))
-		i = 1;
-	while (n)
+void	my_freestr(char *str)
+{
+	if (str != NULL)
 	{
-		i++;
-		n = n / 10;
+		free(str);
+		str = NULL;
 	}
-	return (i);
 }

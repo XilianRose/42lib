@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 11:09:09 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/22 12:53:22 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/04/06 14:27:42 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+#  define my_freewrapper(p) my_freewrapper((void**)&(p)) ;
 
 /* libft functions */
 int		ft_isalpha(int c);
@@ -89,7 +91,9 @@ char	*ft_strjoin_gnl(char const *s1, char const *s2);
 char	*ft_strchr_gnl(const char *s, int c);
 
 /* added functions */
-int		ft_intlen(int n);
-char	*ft_strendstr(const char *hay, const char *needle);
+int		my_intlen(int n);
+char	*my_strendstr(const char *hay, const char *needle);
+void	my_freestr(char *str);
+void	*my_realloc(void *ptr, size_t size);
 
 #endif

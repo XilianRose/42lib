@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 11:09:09 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/04/06 14:27:42 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/04/21 11:23:54 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
-
-#  define my_freewrapper(p) my_freewrapper((void**)&(p)) ;
+}	t_list;
 
 /* libft functions */
 int		ft_isalpha(int c);

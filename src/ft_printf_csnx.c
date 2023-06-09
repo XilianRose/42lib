@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/02 14:50:18 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/03 15:11:25 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/06/09 15:32:46 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_printf_nbr(int n)
 		ft_printf_nbr(n / 10);
 		ft_printf_nbr(n % 10);
 	}
-	return (ft_intlen(n));
+	return (my_intlen(n));
 }
 
 int	ft_printf_uns(unsigned int n, int res)

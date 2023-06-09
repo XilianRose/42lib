@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 17:47:41 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/03 15:10:17 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/06/09 15:31:50 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_itoa(int n)
 	char	*res;
 	size_t	len;
 
-	len = ft_intlen(n);
+	len = my_intlen(n);
 	res = ft_calloc((len + 1), sizeof(char));
 	if (!res)
 		return (NULL);

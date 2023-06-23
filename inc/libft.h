@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 11:09:09 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/04/21 11:23:54 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/06/23 16:22:24 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ char	*ft_strchr_gnl(const char *s, int c);
 /* added functions */
 int		my_intlen(int n);
 char	*my_strendstr(const char *hay, const char *needle);
-void	my_freestr(char *str);
+void	my_freestr(char **str);
 void	*my_realloc(void *ptr, size_t size);
 
 #endif

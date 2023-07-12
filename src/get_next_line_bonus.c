@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/11 12:19:29 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/03 15:13:22 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/02 13:14:03 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 static void	ft_free_str(char **str)
 {
-	if (str != NULL && *str != '\0')
+	if (str != NULL && *str != NULL)
 	{
 		free(*str);
 		*str = NULL;

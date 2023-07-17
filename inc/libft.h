@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 11:09:09 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/07/06 16:27:22 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/17 14:17:03 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ void	my_freestr(char *str);
 void	*my_realloc(void *ptr, size_t size);
 char	**my_allocarray(int x, int y);
 void	my_freearray(char **array);
+long	my_atol(const char *str);
 
 #endif

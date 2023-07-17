@@ -6,7 +6,7 @@
 #    By: mstegema <mstegema@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/02/16 12:00:14 by mstegema      #+#    #+#                  #
-#    Updated: 2023/07/12 14:39:50 by mstegema      ########   odam.nl          #
+#    Updated: 2023/07/17 14:16:53 by mstegema      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,8 @@ SRCS = src/ft_isalpha.c \
 	src/my_freestr.c \
 	src/my_realloc.c \
 	src/my_allocarray.c \
-	src/my_freearray.c
+	src/my_freearray.c \
+	src/my_atol.c
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 CFLAGS = -Wall -Wextra -Werror
 HEADER = $(INCDIR)/libft.h

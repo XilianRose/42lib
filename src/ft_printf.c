@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/28 11:33:29 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/03 15:16:14 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/26 13:04:25 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ static int	ft_printf_cs(const char *c, va_list ap, int res, int i)
 	{
 		if (c[i] != '%')
 		{
-			write_return = write(1, c + i, 1);
-			i++;
+			write_return = write(1, c + i++, 1);
 			res = res + write_return;
 		}
 		else if (c[i] == '%' && c[i + 1] == '%')

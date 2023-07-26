@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strendstr.c                                     :+:    :+:            */
+/*   my_strendstr.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/22 12:02:16 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/04/06 14:00:16 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/26 12:58:37 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,3 @@ char	*my_strendstr(const char *hay, const char *needle)
 
 // 	return (0);
 // }
-

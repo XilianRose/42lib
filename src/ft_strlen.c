@@ -6,7 +6,7 @@
 /*   By: mstegema <mstegema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 16:00:24 by mstegema      #+#    #+#                 */
-/*   Updated: 2023/03/03 15:12:42 by mstegema      ########   odam.nl         */
+/*   Updated: 2023/07/26 13:19:47 by mstegema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (i);
 	while (s[i])
 	{
 		i++;
